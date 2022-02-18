@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { ContadorComponent } from './components/contador/contador.component';
 import { HeroeComponent } from './components/heroe/heroe.component';
 import { TareasComponent } from './components/tareas/tareas.component';
+import { DbzModule } from './dbz/dbz.module';
 import { PagesModule } from './pages/pages.module';
 
 @NgModule({
@@ -21,6 +22,8 @@ import { PagesModule } from './pages/pages.module';
     AppRoutingModule,
     FormsModule,
     PagesModule,
+    DbzModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
