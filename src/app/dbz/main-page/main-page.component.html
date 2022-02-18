@@ -1,9 +1,11 @@
 <h2>Home Page DBZ App</h2>
 <div class="container">
     <div>
-        <app-listado-personaje [personajes]="personajes"></app-listado-personaje>
+        <!-- <app-listado-personaje [personajes]="personajes"></app-listado-personaje> -->
+        <app-listado-personaje [personajes]="personajesDBZ"></app-listado-personaje>
     </div>
     <div>
-        <app-form-personaje (newPersonaje)="agregarPersonaje($event)" [personaje]="personaje"></app-form-personaje>
+        <!-- <app-form-personaje (newPersonaje)="agregarPersonaje($event)" [personaje]="personaje"></app-form-personaje> -->
+        <app-form-personaje [personaje]="personaje"></app-form-personaje>
     </div>
 </div>

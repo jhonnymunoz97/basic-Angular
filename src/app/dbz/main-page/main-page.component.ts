@@ -11,20 +11,20 @@ import { DbzService } from '../services/dbz.service';
 })
 export class MainPageComponent implements OnInit {
 
-  personajes: Personajes[] = [];
   
   personaje:Personajes={
-    nombre:'Escriba nuevo personaje',
+    nombre:'Nuevo Personaje',
     poder:0
   }
 
-  constructor(private bdz_service:DbzService) { }
+  get personajesDBZ():Personajes[]{
+    return this.personajeService.listaPersonajes;
+  }
 
+  constructor(private personajeService:DbzService) { }
   
+
   ngOnInit(): void {
   }
 
-  agregarPersonaje(personaje:any){
-    this.personajes.push(personaje)   
-  }
 }

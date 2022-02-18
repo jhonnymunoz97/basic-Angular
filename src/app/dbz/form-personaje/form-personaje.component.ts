@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Personajes } from '../models/Personaje';
+import { DbzService } from '../services/dbz.service';
 
 @Component({
   selector: 'app-form-personaje',
@@ -13,9 +14,9 @@ export class FormPersonajeComponent implements OnInit {
     poder:0
   }
 
-  @Output() newPersonaje:EventEmitter<Personajes> = new EventEmitter();
+  /* @Output() newPersonaje:EventEmitter<Personajes> = new EventEmitter(); */
 
-  constructor() { }
+  constructor(private personajeService:DbzService) { }
 
   ngOnInit(): void {
   }
@@ -24,7 +25,7 @@ export class FormPersonajeComponent implements OnInit {
     if(this.personaje.nombre.trim().length < 1){
       alert("El nombre del personaje está vacío");
     }else{
-      this.newPersonaje.emit(this.personaje);
+      this.personajeService.addPersonaje(this.personaje)
       this.personaje = {
         nombre:'',
         poder:0
