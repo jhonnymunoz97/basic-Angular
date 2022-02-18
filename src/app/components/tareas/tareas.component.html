@@ -1,0 +1,23 @@
+<h2> {{ title }}  </h2>
+<label for="txt_tarea">Escriba una tarea: </label>
+<input type="text" id="txt_tarea" [(ngModel)]="tarea" (keyup.enter)="mensaje($event)" >
+<button (click)="addTarea(tarea)">  {{ btn_txt }} </button>
+<h3 *ngIf="tareas.length<1;else message"> No hay tareas en la lista </h3> 
+<ng-template #message> 
+    <h3> Sus tareas del día son: </h3> 
+</ng-template>
+<ul>
+    <table>
+        <div *ngFor="let tarea of tareas; let i = index">
+            <tr>
+                <td>
+                    <li > {{i+1}} . {{ tarea }}</li>
+                </td>
+                <td>
+                    <button (click)="editarTarea(i)">Editar</button>
+                    <button (click)="eliminarTarea(i)">Eliminar</button>
+                </td>
+            </tr>
+        </div>
+    </table> 
+</ul>
